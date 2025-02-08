@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #header {
+      height: 60px;
+      line-height: 60px;
+      color: white;
+      text-align: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      list-style: none;
+    }
+    #sidebar {
+      width: 200px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #343a40;
+      color: white;
+      padding: 15px;
+    }
+    #content {
+      margin-left: 220px;
+      padding: 20px;
+      color: white;
+    }
+    </style>
+</head>
+<body>
+    
+
+    <div id="header" style="background-color: #007bff;">
+        <h1>Header</h1>
+    </div>
+  <div id="sidebar"><h1>Sidebar</h1></div>
+  <div id="content">
+    <center>
+    <h1>Theme Customizer</h1>
+    <form>
+        <br><br>
+        <div class="mb-3">
+          <label for="headerColor" class="form-label">Header Background Color:</label>
+          <input type="color" id="headerColor" class="form-control form-control-color" value="#007bff">
+        </div>
+        <br><br>
+        <div class="mb-3">
+          <label for="sidebarColor" class="form-label">Sidebar Background Color:</label>
+          <input type="color" id="sidebarColor" class="form-control form-control-color" value="#343a40">
+        </div>
+        <br><br>
+        <div class="mb-3">
+          <label for="bodyColor" class="form-label">Body Background Color:</label>
+          <input type="color" id="bodyColor" class="form-control form-control-color" value="#ffffff">
+        </div>
+        <br><br>
+        <div class="mb-3">
+            <label for="bodyColor" class="form-label">Font Color:</label>
+            <input type="color" id="Color" class="form-control form-control-color" value="#ffffff">
+          </div>
+      </form>
+    </center>
+  </div>
+  <script>
+    const updateBackgroundColor = (elementId, color) => {
+      document.getElementById(elementId).style.backgroundColor.color = color;
+    };
+
+    document.getElementById('headerColor').addEventListener('input', function () {
+      updateBackgroundColor('header', this.value);
+    });
+
+    document.getElementById('sidebarColor').addEventListener('input', function () {
+      updateBackgroundColor('sidebar', this.value);
+    });
+
+    document.getElementById('bodyColor').addEventListener('input', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('Color').addEventListener('input', function () {
+      document.body.style.color = this.value;
+    });
+  </script>
+</body>
+</html>
